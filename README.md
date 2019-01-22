@@ -1,11 +1,14 @@
-# Luke's build of st - the simple (suckless) terminal
+# Taihen's build of st - the simple (suckless) terminal
 
-The [suckless terminal (st)](https://st.suckless.org/) with some additional features:
+This is private build of [suckless terminal (st)](https://st.suckless.org/) based on Luke Smith build [https://lukesmith.xyz](https://lukesmith.xyz).
+
+Features:
 
 + Compatibility with `Xresources` and `pywal` for dynamic colors.
 + Default [gruvbox](https://github.com/morhetz/gruvbox) colors otherwise.
 + Transparency/alpha, which is also adjustable from `~/.Xresources`.
-+ Default font is system "mono" at 16pt, meaning the font will match your system font.
++ Solarized Dark colorscheme 
++ Default font is system "Terminus" at 10pt
 + Very useful keybinds including:
 	+ Copy is alt-c, paste is alt-v or alt-p pastes from primary selection
 	+ Alt-l feeds all urls on screen to dmenu, so they user can choose and
@@ -17,7 +20,7 @@ The [suckless terminal (st)](https://st.suckless.org/) with some additional feat
 	+ Alt-PageUp and Alt-PageDown will do the same.
 + Vertcenter
 + Scrollback
-+ updated to latest version 0.8.1
++ Based version 0.8.1
 
 The following additional bindings were added before I forked this:
 
@@ -73,5 +76,4 @@ transparency.
 
 ## Contact
 
-- Luke Smith <luke@lukesmith.xyz>
-- [https://lukesmith.xyz](https://lukesmith.xyz)
+- Taihen <taihen@taihen.org>
