@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Terminus:pixelsize=10:lcdfilter=lcddefault:hintstyle=hintnone:rgba=rgb:antialias=false:autohint=false";
+static char *font = "mononoki Nerd Font:pixelsize=14:lcdfilter=lcddefault:hintstyle=hintnone:rgba=rgb:antialias=true:autohint=true";
 static int borderpx = 3;
 
 /*
@@ -16,7 +16,7 @@ static int borderpx = 3;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/bash";
 char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -85,35 +85,33 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 unsigned int alpha = 0xed;
 
+/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  /* solarized dark */
-  "#073642",  /*  0: black    */
-  "#dc322f",  /*  1: red      */
-  "#859900",  /*  2: green    */
-  "#b58900",  /*  3: yellow   */
-  "#268bd2",  /*  4: blue     */
-  "#d33682",  /*  5: magenta  */
-  "#2aa198",  /*  6: cyan     */
-  "#eee8d5",  /*  7: white    */
-  "#002b36",  /*  8: brblack  */
-  "#cb4b16",  /*  9: brred    */
-  "#586e75",  /* 10: brgreen  */
-  "#657b83",  /* 11: bryellow */
-  "#839496",  /* 12: brblue   */
-  "#6c71c4",  /* 13: brmagenta*/
-  "#93a1a1",  /* 14: brcyan   */
-  "#fdf6e3",  /* 15: brwhite  */
-
+				"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+				"#cc241d",
+				"#98971a",
+				"#d79921",
+				"#458588",
+				"#b16286",
+				"#689d6a",
+				"#a89984",
+				"#928374",
+				"#fb4934",
+				"#b8bb26",
+				"#fabd2f",
+				"#83a598",
+				"#d3869b",
+				"#8ec07c",
+				"#ebdbb2",
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 12;
-unsigned int defaultbg = 8;
-static unsigned int defaultcs = 14;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+static unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 15;
 
 /*
@@ -166,8 +164,9 @@ ResourcePref resources[] = {
 		{ "color13",      STRING,  &colorname[13] },
 		{ "color14",      STRING,  &colorname[14] },
 		{ "color15",      STRING,  &colorname[15] },
-		{ "background",   STRING,  &colorname[256] },
-		{ "foreground",   STRING,  &colorname[257] },
+		{ "background",   STRING,  &colorname[0] },
+		{ "foreground",   STRING,  &colorname[15] },
+		{ "coursorColor", STRING,  &colorname[15] },
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
 		{ "xfps",         INTEGER, &xfps },
