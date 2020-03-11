@@ -5,10 +5,8 @@ This is private build of [suckless terminal (st)](https://st.suckless.org/) base
 Features:
 
 + Compatibility with `Xresources` and `pywal` for dynamic colors.
-+ Default [gruvbox](https://github.com/morhetz/gruvbox) colors otherwise.
 + Transparency/alpha, which is also adjustable from `~/.Xresources`.
-+ Solarized Dark colorscheme 
-+ Default font is system "Terminus" at 10pt
++ Default font is system "Terminus" at 14pt
 + Very useful keybinds including:
 	+ Copy is alt-c, paste is alt-v or alt-p pastes from primary selection
 	+ Alt-l feeds all urls on screen to dmenu, so they user can choose and
